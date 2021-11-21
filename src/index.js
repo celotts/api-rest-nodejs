@@ -4,6 +4,9 @@ const express = require("express");
 
 const app = express();
 
+// Logger
+const Logger = require('logger-nodejs');
+
 const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
@@ -14,5 +17,5 @@ app.get("/hola", (req, res) => {
 });
 
 app.listen(port, () => {
-  //console.log(`Server is running on port ${port}`);
+  Logger.info(`Server is running on port ${port}`);
 });
